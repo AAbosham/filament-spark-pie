@@ -13,7 +13,7 @@
 <div class="flex justify-center">
     <div x-data="{
         init: function() {
-            var chart = new FilamentSparkPie($refs.spark-pie, {
+            var chart = new FilamentSparkPie($refs.sparkPie, {
                 trackColor: '{{ $trackColor }}',
                 scaleColor: '{{ $scaleColor }}',
                 barColor: '{{ $barColor }}',
@@ -25,7 +25,7 @@
         }
     }" wire:ignore wire:key="{{ str()->random(10) }}" data-percent="{{ $value }}"
         class="my-2 filament-spark-pie-column">
-        <div x-ref="spark-pie">
+        <div x-ref="sparkPie">
             <div class="absolute text-center text-xs"
                 style="line-height: {{ $size }}px; width:{{ $size }}px;">
                 @if (filled($suffix))
