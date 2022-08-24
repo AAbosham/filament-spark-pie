@@ -1,4 +1,4 @@
-<x-filament-sparkpie::sparkpie
+<x-filament-spark-pie::spark-pie
     :value="$getState()"
     :trackColor="$getTrackColor()"
     :scaleColor="$getScaleColor()"
