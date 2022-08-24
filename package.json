@@ -1,0 +1,12 @@
+{
+    "name": "spark-pie-column",
+    "dependencies": {
+        "dayjs": "^1.11.3",
+        "jquery": "^3.6.0",
+        "laravel-mix": "^6.0.37"
+    },
+    "scripts": {
+        "build": "mix --production",
+        "watch": "mix watch"
+    }
+}
