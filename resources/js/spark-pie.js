@@ -5,7 +5,7 @@
  * @param {object}     options options object of the plugin
  */
 
-var CanvasRenderer = function (el, options) {
+ var CanvasRenderer = function (el, options) {
     var cachedBackground;
     var canvas = document.createElement('canvas');
 
@@ -130,6 +130,17 @@ var CanvasRenderer = function (el, options) {
         ctx.clearRect(options.size / -2, options.size / -2, options.size, options.size);
     };
 
+    var defaultBarColor = function () {
+        var tmpColor = document.querySelector('.bg-primary-600');
+        if (tmpColor) {
+            tmpColor = getComputedStyle(tmpColor);
+            if (tmpColor && tmpColor.backgroundColor)
+                return tmpColor.backgroundColor;
+        }
+        else
+            return '#ef1e25';
+    };
+
     /**
      * Draw the complete chart
      * @param {number} percent Percent shown by the chart between -100 and 100
@@ -161,7 +172,10 @@ var CanvasRenderer = function (el, options) {
         if (typeof (options.barColor) === 'function') {
             color = options.barColor(percent);
         } else {
+            if (options.barColor.length)
             color = options.barColor;
+            else
+            color = defaultBarColor();
         }
 
         // draw bar
@@ -193,6 +207,7 @@ var CanvasRenderer = function (el, options) {
 };
 
 var FilamentSparkPie = function (el, opts) {
+
     var defaultOptions = {
         barColor: '#ef1e25',
         trackColor: '#f9f9f9',

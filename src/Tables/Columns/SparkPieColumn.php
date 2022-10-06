@@ -13,7 +13,7 @@ class SparkPieColumn extends Column
 
     protected string | Closure $scaleColor = '#C0C0C0';
 
-    protected string | Closure $barColor = 'blue';
+    protected string | Closure $barColor = ''; // default color will be bg-primary-600 if not found will return #ef1e25
 
     protected int | Closure $size = 70;
 
