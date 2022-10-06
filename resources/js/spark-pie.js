@@ -134,11 +134,12 @@
         var tmpColor = document.querySelector('.bg-primary-600');
         if (tmpColor) {
             tmpColor = getComputedStyle(tmpColor);
-            if (tmpColor && tmpColor.backgroundColor)
+            if (tmpColor && tmpColor.backgroundColor) {
                 return tmpColor.backgroundColor;
-        }
-        else
+            }
+        } else {
             return '#ef1e25';
+        }
     };
 
     /**
@@ -172,10 +173,11 @@
         if (typeof (options.barColor) === 'function') {
             color = options.barColor(percent);
         } else {
-            if (options.barColor.length)
-            color = options.barColor;
-            else
-            color = defaultBarColor();
+            if (options.barColor.length) {
+                color = options.barColor;
+            } else {
+                color = defaultBarColor();
+            }
         }
 
         // draw bar
