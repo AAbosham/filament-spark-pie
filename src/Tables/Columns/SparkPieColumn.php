@@ -104,7 +104,7 @@ class SparkPieColumn extends Column
         return $this->evaluate($this->chartLabel) ?? $this->getState();
     }
 
-    public function prefix(string | Closure $prefix): static
+    public function prefix(string | Closure | null $prefix): static
     {
         $this->prefix = $prefix;
 
@@ -116,7 +116,7 @@ class SparkPieColumn extends Column
         return $this->evaluate($this->prefix);
     }
 
-    public function suffix(string | Closure $suffix): static
+    public function suffix(string | Closure | null $suffix): static
     {
         $this->suffix = $suffix;
 
@@ -125,6 +125,6 @@ class SparkPieColumn extends Column
 
     public function getSuffix(): string | int | null
     {
-        return $this->evaluate($this->suffix) ?? '%';
+        return $this->evaluate($this->suffix);
     }
 }

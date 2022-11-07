@@ -7,7 +7,7 @@
     'lineWidth' => 4,
     'chartLabel' => null,
     'prefix' => null,
-    'suffix' => '%',
+    'suffix' => null,
 ])
 
 <div class="flex justify-center">
@@ -26,7 +26,7 @@
     }" wire:ignore wire:key="{{ str()->random(10) }}" data-percent="{{ $value }}"
         class="my-2 filament-spark-pie-column">
         <div x-ref="sparkPie">
-            <div class="absolute text-center text-xs"
+            <div class="absolute text-xs text-center"
                 style="line-height: {{ $size }}px; width:{{ $size }}px;">
                 @if (filled($suffix))
                     <span>{{ $suffix }}</span>
