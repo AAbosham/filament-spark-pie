@@ -2,9 +2,9 @@
 
 namespace AAbosham\FilamentSparkPie\Infolists\Components;
 
-use Filament\Infolists\Components\Entry;
 use AAbosham\FilamentSparkPie\Concerns\HasSparkPie;
 use Filament\Infolists\Components\Concerns\HasAffixes;
+use Filament\Infolists\Components\Entry;
 
 class SparkPieEntry extends Entry
 {
